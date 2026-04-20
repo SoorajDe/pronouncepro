@@ -33,5 +33,3 @@ PronouncePro is a modern, full-stack web application designed to help users mast
 2. `cd frontend && npm install && npm run dev`
 3. Add `GEMINI_API_KEY` to `backend/.env`
 4. Visit `http://localhost:5173`
-
-## 📱 Structure
