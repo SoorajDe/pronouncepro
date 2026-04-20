@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "1764861260582",
+      "email": "sooraj.devadiga9380@gmail.com",
+      "name": "sooraj",
+      "password": "$2b$10$.ja3bhw6vnzCoZ/bpYitu.BtDfWro2KZmhk.ZwZ/us5cRL7qvHvF2",
+      "createdAt": "2025-12-04T15:14:20.582Z",
+      "streak": 0,
+      "totalScore": 0,
+      "languages": [
+        "en"
+      ]
+    }
+  ],
+  "userProgress": {},
+  "achievements": {}
+}

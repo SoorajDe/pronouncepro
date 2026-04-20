@@ -1,0 +1,28 @@
+{
+  "name": "nerw_major",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "build:pwa": "vite build --mode pwa",
+    "start": "node server.js",
+    "start-server": "node server.mjs",
+    "generate-pwa-assets": "pwa-assets-generator"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "vite": "^5.3.1",
+    "vite-plugin-pwa": "^0.20.0",
+    "@vite-pwa/assets-generator": "^0.2.4"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1"
+  }
+}

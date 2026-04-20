@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PronouncePro - AI Pronunciation Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6a11cb">
+</head>
+<body class="antialiased">
+
+    <!-- Login Page -->
+    <div id="login-page" class="relative h-screen bg-gradient-to-br from-slate-900 to-gray-900 flex items-center justify-center overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-72 h-72 bg-purple-600 rounded-full opacity-40 blur-3xl animate-blob"></div>
+            <div class="absolute top-0 left-1/4 w-72 h-72 bg-indigo-600 rounded-full opacity-40 blur-3xl animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-pink-600 rounded-full opacity-40 blur-3xl animate-blob animation-delay-4000"></div>
+            <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-teal-600 rounded-full opacity-40 blur-3xl animate-blob animation-delay-6000"></div>
+        </div>
+
+        <!-- Error Message Display -->
+        <div id="auth-error-container" class="absolute top-10 z-20"></div>
+
+        <!-- Auth Container -->
+        <div id="auth-container" class="relative z-10 w-full max-w-lg">
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app-container" class="hidden min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <!-- Navigation Sidebar -->
+<aside id="sidebar" class="side-nav fixed left-0 top-0 z-40 h-screen w-64 glass-card transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out" style="overflow-y: auto;">
+            <!-- Logo -->
+            <div class="flex items-center justify-center h-16 px-4 border-b border-gray-200/50 dark:border-gray-700/50">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.858 5.858a9 9 0 0112.728 0m-12.728 0a9 9 0 010 12.728m0-12.728L12 12m0 0l5.858 5.858"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">PronouncePro</span>
+                </div>
+            </div>
+
+            <!-- User Profile -->
+            <div class="px-4 pt-4 pb-0 mb-0 border-b border-gray-200/50">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <span id="user-avatar" class="text-white font-semibold text-sm">U</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p id="user-name" class="text-sm font-medium text-gray-900 truncate">User</p>
+                    </div>
+                    <button id="logout-btn" class="p-1 rounded-lg hover:bg-gray-100 transition-colors">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="pill-nav-shell mt-2">
+                <div id="nav-color-bends" class="color-bends-shell hidden" aria-hidden="true"></div>
+<nav class="pill-nav flex-1" role="tablist">
+    <span id="pill-nav-indicator" class="pill-nav__indicator"></span>
+<button data-page="home" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+    </svg>
+    <span>Home</span>
+
+                <button data-page="practice" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                    </svg>
+                    <span>Practice</span>
+                </button>
+
+                <button data-page="roleplay" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                    <span>Roleplay</span>
+                </button>
+
+                <button data-page="customPractice" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+                    </svg>
+                    <span>Custom</span>
+                </button>
+
+                <button data-page="accent" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                    </svg>
+                    <span>Phonetics</span>
+                </button>
+
+                <button data-page="games" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                    </svg>
+                    <span>Games</span>
+                </button>
+
+                <button data-page="exam" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>Exam</span>
+                </button>
+
+                <button data-page="scanner" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <span>Scanner</span>
+                </button>
+
+                <button data-page="charts" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    <span>Analytics</span>
+                </button>
+
+                <button data-page="settings" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-left transition-all duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span>Settings</span>
+                </button>
+                </nav>
+            </div>
+
+            <!-- Streak Counter -->
+            <div class="px-4 pt-4 pb-1 border-b border-gray-200/50">
+                <div class="bg-gradient-to-r from-orange-400 to-red-500 rounded-xl p-4 text-center">
+                    <div class="text-white text-sm font-medium mb-1">🔥 Current Streak</div>
+                    <div id="streak-counter" class="text-2xl font-bold text-white">0 Days</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="sidebar-overlay" class="fixed inset-0 z-30 bg-black bg-opacity-50 lg:hidden opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+        <!-- Main Content Area -->
+        <div class="lg:ml-64">
+            <!-- Top Bar -->
+            <header class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 px-4 py-3 lg:px-6">
+                <div class="flex items-center justify-between">
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Page Title -->
+                    <h1 id="page-title" class="text-xl font-semibold text-gray-900 dark:text-white">Dashboard</h1>
+
+                    <!-- User Actions -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Notifications -->
+                        <button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors relative">
+                            <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM15 17H9a6 6 0 01-6-6V9a6 6 0 0110.293-4.293L15 6.414V17z"></path>
+                            </svg>
+                            <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
+                        </button>
+
+                        <!-- Theme Toggle -->
+                        <button id="theme-toggle-main" onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" title="Toggle theme (Ctrl+Shift+D)">
+                            <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main id="page-content" class="flex-1 overflow-y-auto p-4 lg:p-6"></main>
+        </div>
+
+        <!-- Real-time Subtitle Footer -->
+        <footer id="subtitle-footer" class="fixed bottom-0 left-0 right-0 bg-transparent backdrop-blur-xl text-white text-center p-3 text-lg h-16 flex items-center justify-center border-t border-white/10 z-20 lg:left-64">
+            <span id="subtitle-text" class="max-w-full truncate"></span>
+        </footer>
+    </div>
+
+    <!-- Modal for AI Tutor and Game Instructions -->
+        <div id="ai-tutor-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 modal-overlay opacity-0 pointer-events-none">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-lg p-6 modal-container transform scale-95">
+            <div class="flex justify-between items-center mb-4">
+                <h2 id="modal-title" class="text-xl font-bold text-gray-900 dark:text-white">✨ AI Practice Session</h2>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+            <div id="modal-content" class="space-y-3 text-gray-900 dark:text-white"></div>
+        </div>
+    </div>
+
+    <script src="../backend/config/env.js"></script>
+    <script src="src/pages/login.js"></script>
+    <script src="src/pages/signup.js"></script>
+    <script src="src/pages/resetPassword.js"></script>
+    <script src="src/pages/home.js"></script>
+    <script src="src/pages/practice.js"></script>
+    <script src="src/pages/roleplay.js"></script>
+    <script src="src/pages/customPractice.js"></script>
+    <script src="src/pages/accent.js"></script>
+    <script src="src/pages/games.js"></script>
+    <script src="src/pages/exam.js"></script>
+    <script src="src/pages/charts.js"></script>
+    <script src="src/pages/scanner.js"></script>
+    <script src="src/pages/settings.js"></script>
+    <script type="module" src="src/components/ColorBends.js"></script>
+    <script src="src/main.js"></script>
+</body>
+</html>

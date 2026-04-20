@@ -1,0 +1,13 @@
+{
+  "name": "pronouncepro-root",
+  "version": "1.0.0",
+  "description": "Root package for PronouncePro project",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,601 @@
+{
+  "users": [
+    {
+      "id": "1764857628392",
+      "email": "test@example.com",
+      "name": "Test User",
+      "password": "$2b$10$3MgxtmZQUv8KDfMiW.B9Hu0tCgeiDRIzK5cVukj2FxtBJSWBMQ8/6",
+      "createdAt": "2025-12-04T14:13:48.392Z",
+      "streak": 0,
+      "totalScore": 0,
+      "languages": [
+        "en"
+      ]
+    },
+    {
+      "id": "1764857899900",
+      "email": "sooraj.devadiga9380@gmail.com",
+      "name": "sooraj",
+      "password": "$2b$10$2WcehFcixsqlC68pgDQ.Fer6P0a2Y0FNsCrUuhN35HGDGhATDtlI2",
+      "createdAt": "2025-12-04T14:18:19.900Z",
+      "streak": 0,
+      "totalScore": 667,
+      "languages": [
+        "en"
+      ],
+      "passwordResetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3NjQ4NTc4OTk5MDAiLCJpYXQiOjE3NjU1MjkzNTgsImV4cCI6MTc2NTUzMDI1OH0.Gu3xgxu-xpVUbA8cxgEggiaj5XKUAMVLcojAMhXfp7k",
+      "passwordResetExpires": 1765530258795
+    },
+    {
+      "id": "1767275442318",
+      "email": "testcase@gmail.com",
+      "name": "testcase",
+      "password": "$2b$10$oig7BHEsqlT05tniNR2oJuHnb4PhVEqm3nGwyCMKU0yWcXSgyjo7O",
+      "createdAt": "2026-01-01T13:50:42.319Z",
+      "streak": 0,
+      "totalScore": 303,
+      "languages": [
+        "en"
+      ]
+    }
+  ],
+  "userProgress": {
+    "1764857899900": {
+      "en-US": [
+        {
+          "score": 25,
+          "feedback": {
+            "overall_score": 25,
+            "intonation_score": 5,
+            "intonation_details": "The target phrase 'Hello, how are you?' has a specific intonation pattern: a slight rise on 'Hello', followed by a general rising tone on 'how are' and a falling tone on 'you'. Your utterance only covered 'Hello' twice, and the overall intonation for the full phrase was not conveyed. Focus on connecting the words smoothly and practicing the full melodic contour.",
+            "words": [
+              {
+                "word": "Hello",
+                "correctness": "correct",
+                "phoneme_tip": "N/A"
+              }
+            ]
+          },
+          "date": "2026-01-01T04:25:02.240Z"
+        },
+        {
+          "score": 98,
+          "feedback": {
+            "overall_score": 98,
+            "intonation_score": 95,
+            "intonation_details": "Intonation was generally excellent, with a natural rise on 'Hello' and appropriate question intonation for 'how are you?'.",
+            "words": [
+              {
+                "word": "Hello",
+                "correctness": "correct",
+                "phoneme_tip": "None needed. Pronounced clearly and naturally."
+              },
+              {
+                "word": "how",
+                "correctness": "correct",
+                "phoneme_tip": "None needed. The vowel sound was well-formed."
+              },
+              {
+                "word": "are",
+                "correctness": "correct",
+                "phoneme_tip": "None needed. The 'r' sound was clear and the vowel reduced appropriately."
+              },
+              {
+                "word": "you",
+                "correctness": "correct",
+                "phoneme_tip": "None needed. The 'y' and 'oo' sounds were precise."
+              }
+            ]
+          },
+          "date": "2026-01-01T05:31:22.176Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "No audio provided for analysis.",
+            "words": []
+          },
+          "date": "2026-01-01T05:32:43.591Z"
+        },
+        {
+          "score": 70,
+          "feedback": {
+            "overall_score": 70,
+            "intonation_score": 75,
+            "intonation_details": "For 'have some food', aim for a natural falling intonation on 'food', indicating completion. Ensure a smooth flow and connected speech, especially between 'have' and 'some'.",
+            "words": [
+              {
+                "word": "have",
+                "correctness": "partial",
+                "phoneme_tip": "Focus on the short 'a' sound (æ) as in 'cat'. Make sure the 'v' sound at the end is clearly voiced, not unvoiced like 'f'."
+              },
+              {
+                "word": "some",
+                "correctness": "partial",
+                "phoneme_tip": "The vowel sound in 'some' is typically a short 'uh' (ʌ), like in 'cup'. Avoid a long 'o' sound. Ensure the 'm' is clear."
+              },
+              {
+                "word": "food",
+                "correctness": "correct",
+                "phoneme_tip": "Pay attention to the long 'oo' sound (uː) as in 'moon' or 'blue'. Articulate the final 'd' clearly but softly, without adding an extra vowel sound."
+              }
+            ]
+          },
+          "date": "2026-01-01T05:33:17.011Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "No speech input detected for analysis.",
+            "words": []
+          },
+          "date": "2026-01-01T05:41:46.838Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "No speech input was provided for analysis.",
+            "words": []
+          },
+          "date": "2026-01-01T05:42:07.823Z"
+        },
+        {
+          "score": 100,
+          "feedback": {
+            "overall_score": 100,
+            "intonation_score": 100,
+            "intonation_details": "Your intonation was excellent, matching the natural rhythm and stress of the sentence perfectly.",
+            "words": [
+              {
+                "word": "My",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              },
+              {
+                "word": "name",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              },
+              {
+                "word": "is",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              },
+              {
+                "word": "Alex.",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              }
+            ]
+          },
+          "date": "2026-01-01T05:42:14.550Z"
+        },
+        {
+          "score": 10,
+          "feedback": {
+            "overall_score": 10,
+            "intonation_score": 0,
+            "intonation_details": "Intonation cannot be fully assessed as only a single word was spoken from the target sentence. Focus on the natural flow and stress patterns when speaking the complete sentence.",
+            "words": [
+              {
+                "word": "she",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              }
+            ]
+          },
+          "date": "2026-01-01T05:42:46.465Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "No audio was provided to analyze intonation. Please provide audio for an accurate assessment.",
+            "words": [
+              {
+                "word": "Hello",
+                "correctness": "incorrect",
+                "phoneme_tip": "No audio provided for this word. Please say the word for analysis."
+              },
+              {
+                "word": "how",
+                "correctness": "incorrect",
+                "phoneme_tip": "No audio provided for this word. Please say the word for analysis."
+              },
+              {
+                "word": "are",
+                "correctness": "incorrect",
+                "phoneme_tip": "No audio provided for this word. Please say the word for analysis."
+              },
+              {
+                "word": "you",
+                "correctness": "incorrect",
+                "phoneme_tip": "No audio provided for this word. Please say the word for analysis."
+              }
+            ]
+          },
+          "date": "2026-01-01T05:44:19.137Z"
+        },
+        {
+          "score": 98,
+          "feedback": {
+            "overall_score": 98,
+            "intonation_score": 95,
+            "intonation_details": "The intonation shows a good natural flow, with appropriate stress on key words and a clear falling tone at the end of the statement.",
+            "words": [
+              {
+                "word": "This",
+                "correctness": "correct",
+                "phoneme_tip": null
+              },
+              {
+                "word": "is",
+                "correctness": "correct",
+                "phoneme_tip": null
+              },
+              {
+                "word": "a",
+                "correctness": "correct",
+                "phoneme_tip": null
+              },
+              {
+                "word": "big",
+                "correctness": "correct",
+                "phoneme_tip": null
+              },
+              {
+                "word": "city",
+                "correctness": "correct",
+                "phoneme_tip": null
+              }
+            ]
+          },
+          "date": "2026-01-01T05:44:39.234Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "No audio input was provided for analysis. Please provide an audio recording to receive a pronunciation evaluation.",
+            "words": [
+              {
+                "word": "My",
+                "correctness": "incorrect",
+                "phoneme_tip": "No audio input to analyze pronunciation for 'My'."
+              },
+              {
+                "word": "name",
+                "correctness": "incorrect",
+                "phoneme_tip": "No audio input to analyze pronunciation for 'name'."
+              },
+              {
+                "word": "is",
+                "correctness": "incorrect",
+                "phoneme_tip": "No audio input to analyze pronunciation for 'is'."
+              },
+              {
+                "word": "Alex",
+                "correctness": "incorrect",
+                "phoneme_tip": "No audio input to analyze pronunciation for 'Alex'."
+              }
+            ]
+          },
+          "date": "2026-01-01T05:45:05.780Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "No audio input was provided for analysis. Please provide an audio recording to evaluate intonation.",
+            "words": [
+              {
+                "word": "This",
+                "correctness": "incorrect",
+                "phoneme_tip": "No pronunciation detected for 'This'. Please ensure your microphone is enabled and you are speaking clearly."
+              },
+              {
+                "word": "is",
+                "correctness": "incorrect",
+                "phoneme_tip": "No pronunciation detected for 'is'. Please ensure your microphone is enabled and you are speaking clearly."
+              },
+              {
+                "word": "a",
+                "correctness": "incorrect",
+                "phoneme_tip": "No pronunciation detected for 'a'. Please ensure your microphone is enabled and you are speaking clearly."
+              },
+              {
+                "word": "big",
+                "correctness": "incorrect",
+                "phoneme_tip": "No pronunciation detected for 'big'. Please ensure your microphone is enabled and you are speaking clearly."
+              },
+              {
+                "word": "city",
+                "correctness": "incorrect",
+                "phoneme_tip": "No pronunciation detected for 'city'. Please ensure your microphone is enabled and you are speaking clearly."
+              }
+            ]
+          },
+          "date": "2026-01-01T05:45:21.696Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "The spoken input 'CC Nay.' does not resemble the intonation patterns of the target sentence 'Excuse me, do you know how to get to the museum?'. The target sentence typically features rising intonation for the initial question 'Excuse me?' and then a more neutral to slightly rising tone for the 'do you know...' part, ending with a slight fall or rise depending on whether it's a direct or indirect question. None of these patterns were present.",
+            "words": [
+              {
+                "word": "Excuse",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'Excuse' as /ɪkˈskjuːs/. Focus on the 'ex' sound as in 'exit' and the 'cuse' sound as in 'muse'."
+              },
+              {
+                "word": "me",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'me' as /miː/. Focus on the long 'e' sound."
+              },
+              {
+                "word": "do",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'do' as /duː/. Focus on the 'oo' sound as in 'moon'."
+              },
+              {
+                "word": "you",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'you' as /juː/. Focus on the 'y' sound and the 'oo' sound."
+              },
+              {
+                "word": "know",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'know' as /noʊ/. Focus on the 'n' sound and the 'ow' sound as in 'go'."
+              },
+              {
+                "word": "how",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'how' as /haʊ/. Focus on the 'h' sound and the 'ow' sound as in 'cow'."
+              },
+              {
+                "word": "to",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'to' as /tuː/ or /tə/ in connected speech. Focus on the 't' sound and the short 'uh' or long 'oo' sound."
+              },
+              {
+                "word": "get",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'get' as /ɡɛt/. Focus on the 'g' sound and the short 'e' sound as in 'bed'."
+              },
+              {
+                "word": "to",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'to' as /tuː/ or /tə/ in connected speech. Focus on the 't' sound and the short 'uh' or long 'oo' sound."
+              },
+              {
+                "word": "the",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'the' as /ðə/ or /ðiː/. Focus on the soft 'th' sound as in 'this'."
+              },
+              {
+                "word": "museum",
+                "correctness": "incorrect",
+                "phoneme_tip": "Try pronouncing 'museum' as /mjuːˈziːəm/. Focus on the 'mu' sound, the 'zee' sound, and the final 'um' sound."
+              }
+            ]
+          },
+          "date": "2026-01-01T06:58:46.399Z"
+        },
+        {
+          "score": 98,
+          "feedback": {
+            "overall_score": 98,
+            "intonation_score": 95,
+            "intonation_details": "The intonation for 'My name is Alex.' was very natural and appropriate, with a slight rise on 'name' and a fall on 'Alex', typical for a declarative statement.",
+            "words": [
+              {
+                "word": "My",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              },
+              {
+                "word": "name",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              },
+              {
+                "word": "is",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              },
+              {
+                "word": "Alex.",
+                "correctness": "correct",
+                "phoneme_tip": ""
+              }
+            ]
+          },
+          "date": "2026-01-01T06:59:19.330Z"
+        },
+        {
+          "score": 98,
+          "feedback": {
+            "overall_score": 98,
+            "intonation_score": 97,
+            "intonation_details": "The intonation for 'Hello' typically has a slight rise on the second syllable. 'How are you?' usually follows a natural falling intonation pattern for a standard greeting in US English, with emphasis on 'how' and a slight drop towards 'you'.",
+            "words": [
+              {
+                "word": "Hello",
+                "correctness": "correct",
+                "phoneme_tip": "Pronounced with stress on the second syllable, /həˈloʊ/."
+              },
+              {
+                "word": "how",
+                "correctness": "correct",
+                "phoneme_tip": "Clear diphthong sound /haʊ/ as in 'cow'."
+              },
+              {
+                "word": "are",
+                "correctness": "correct",
+                "phoneme_tip": "Pronounced with a clear 'r' sound, /ɑːr/."
+              },
+              {
+                "word": "you",
+                "correctness": "correct",
+                "phoneme_tip": "Clear /juː/ sound, as in 'true'."
+              }
+            ]
+          },
+          "date": "2026-01-01T07:33:33.296Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "No speech input was provided for analysis.",
+            "words": [
+              {
+                "word": "Will",
+                "correctness": "incorrect",
+                "phoneme_tip": "No speech input for this word."
+              },
+              {
+                "word": "you",
+                "correctness": "incorrect",
+                "phoneme_tip": "No speech input for this word."
+              },
+              {
+                "word": "marry",
+                "correctness": "incorrect",
+                "phoneme_tip": "No speech input for this word."
+              },
+              {
+                "word": "me",
+                "correctness": "incorrect",
+                "phoneme_tip": "No speech input for this word."
+              },
+              {
+                "word": "Lily",
+                "correctness": "incorrect",
+                "phoneme_tip": "No speech input for this word."
+              }
+            ]
+          },
+          "date": "2026-01-01T07:40:19.235Z"
+        },
+        {
+          "score": 0,
+          "feedback": {
+            "overall_score": 0,
+            "intonation_score": 0,
+            "intonation_details": "No audio input provided for analysis.",
+            "words": []
+          },
+          "date": "2026-01-01T09:59:09.587Z"
+        },
+        {
+          "score": 25,
+          "feedback": {
+            "overall_score": 25,
+            "intonation_score": 80,
+            "intonation_details": "The intonation for 'Hello' was appropriate for a greeting, exhibiting a natural falling tone. However, the intonation for the remainder of the target phrase ('how are you?') could not be assessed as it was not spoken.",
+            "words": [
+              {
+                "word": "Hello",
+                "correctness": "correct",
+                "phoneme_tip": "Excellent pronunciation of 'Hello'! Keep up the good work."
+              }
+            ]
+          },
+          "date": "2026-01-01T09:59:29.495Z"
+        }
+      ],
+      "kn-IN": [
+        {
+          "score": 45,
+          "feedback": {
+            "overall_score": 45,
+            "intonation_score": 30,
+            "intonation_details": "The ending of the phrase 'ನೀವು ಹೇಗೆ ದಿನ?' does not convey the interrogative tone of 'ನೀವು ಹೇಗಿದ್ದೀರಾ?'. Practice raising your pitch slightly at the end of questions to indicate an inquiry.",
+            "words": [
+              {
+                "word": "ನಮಸ್ಕಾರ",
+                "correctness": "correct",
+                "phoneme_tip": "Excellent pronunciation of 'namaskāra'. The 'ನ', 'ಮ', 'ಸ್ಕಾ', and 'ರ' sounds are clear and accurate."
+              },
+              {
+                "word": "ನೀವು",
+                "correctness": "correct",
+                "phoneme_tip": "Well done on 'nīvu'. The long 'ī' sound and the 'vu' are pronounced correctly."
+              },
+              {
+                "word": "ಹೇಗಿದ್ದೀರಾ?",
+                "correctness": "incorrect",
+                "phoneme_tip": "You pronounced 'ಹೇಗೆ ದಿನ' instead of the full word 'ಹೇಗಿದ್ದೀರಾ?'. Focus on the correct sequence of sounds, especially the 'ddīrā' part, which was missed. Practice the full form 'hēgiddīrā?' including the long 'ī' sound."
+              }
+            ]
+          },
+          "date": "2026-01-01T04:27:13.978Z"
+        }
+      ]
+    },
+    "1767275442318": {
+      "en-US": [
+        {
+          "score": 98,
+          "feedback": {
+            "overall_score": 98,
+            "intonation_score": 97,
+            "intonation_details": "Generally good, with a natural falling-rising pattern for the question 'How are you?'. 'Hello' had a clear, natural initial rise and fall.",
+            "words": [
+              {
+                "word": "Hello",
+                "correctness": "correct",
+                "phoneme_tip": "Stress on the second syllable: /həˈloʊ/."
+              },
+              {
+                "word": "how",
+                "correctness": "correct",
+                "phoneme_tip": "Pronounce with the /aʊ/ diphthong, as in 'cow'."
+              },
+              {
+                "word": "are",
+                "correctness": "correct",
+                "phoneme_tip": "Pronounced clearly as /ɑːr/, often reduced to /ər/ in fast speech but correct as is."
+              },
+              {
+                "word": "you",
+                "correctness": "correct",
+                "phoneme_tip": "Pronounced as /juː/."
+              }
+            ]
+          },
+          "date": "2026-01-01T14:04:47.309Z"
+        },
+        {
+          "score": 50,
+          "feedback": null,
+          "date": "2026-01-01T14:18:26.001Z"
+        },
+        {
+          "score": 75,
+          "feedback": null,
+          "date": "2026-01-01T14:18:32.944Z"
+        },
+        {
+          "score": 80,
+          "feedback": null,
+          "date": "2026-01-01T14:18:38.912Z"
+        }
+      ]
+    }
+  },
+  "achievements": {}
+}
